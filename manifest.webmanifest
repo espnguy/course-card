@@ -1,0 +1,16 @@
+{
+  "name": "Course Card",
+  "short_name": "Course Card",
+  "description": "Personal golf reference card — yardages, lies, chips, slopes, grain, sand.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0a1f14",
+  "theme_color": "#0a1f14",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
