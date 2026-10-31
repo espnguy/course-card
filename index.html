@@ -1006,6 +1006,12 @@
     /* The panel is now ~500-760px wide, so the two-up card rows can breathe
        and the long reference tables stop clipping on short screens. */
     .yard-row, .yard-head { grid-template-columns: 2fr 1fr 1fr; }
+
+    /* The trajectory SVGs use preserveAspectRatio="none", so a wider column
+       stretches them horizontally (2.45x at 951px, which turns the ball into
+       an ellipse). Cap them at the width they were designed around so the
+       proportions match the phone. */
+    .traj { max-width: 460px; margin: 4px auto 8px; }
   }
 </style>
 </head>
@@ -1317,7 +1323,7 @@
       <polygon points="225,30 240,33 225,38" fill="#d97a3a"/>
       <!-- labels -->
       <text x="100" y="8" fill="#6db58a" font-size="8" font-family="Helvetica" font-weight="700">FLY 60%</text>
-      <text x="200" y="50" fill="#d9a441" font-size="8" font-family="Helvetica" font-weight="700">ROLL 40%</text>
+      <text x="210" y="66" text-anchor="middle" fill="#d9a441" font-size="8" font-family="Helvetica" font-weight="700">ROLL 40%</text>
     </svg>
     <div class="chip-setup">
       <span class="setup-item"><b>Club:</b> 54° / 58°</span>
@@ -1340,7 +1346,7 @@
       <line x1="225" y1="55" x2="225" y2="30" stroke="#f5f0e1" stroke-width="1"/>
       <polygon points="225,30 240,33 225,38" fill="#d97a3a"/>
       <text x="100" y="14" fill="#6db58a" font-size="8" font-family="Helvetica" font-weight="700">FLY 50%</text>
-      <text x="185" y="50" fill="#d9a441" font-size="8" font-family="Helvetica" font-weight="700">ROLL 50%</text>
+      <text x="200" y="66" text-anchor="middle" fill="#d9a441" font-size="8" font-family="Helvetica" font-weight="700">ROLL 50%</text>
     </svg>
     <div class="chip-setup">
       <span class="setup-item"><b>Club:</b> 50° / 54°</span>
@@ -1363,7 +1369,7 @@
       <line x1="225" y1="55" x2="225" y2="30" stroke="#f5f0e1" stroke-width="1"/>
       <polygon points="225,30 240,33 225,38" fill="#d97a3a"/>
       <text x="65" y="22" fill="#6db58a" font-size="8" font-family="Helvetica" font-weight="700">FLY 35%</text>
-      <text x="160" y="50" fill="#d9a441" font-size="8" font-family="Helvetica" font-weight="700">ROLL 65%</text>
+      <text x="178" y="66" text-anchor="middle" fill="#d9a441" font-size="8" font-family="Helvetica" font-weight="700">ROLL 65%</text>
     </svg>
     <div class="chip-setup">
       <span class="setup-item"><b>Club:</b> PW / GW</span>
