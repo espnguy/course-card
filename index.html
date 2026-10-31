@@ -68,6 +68,10 @@
     border: 1px solid #2d4d38;
     color: #a8b8ad;
     padding: 10px 1px;
+    min-height: 44px;            /* iOS minimum tap target */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 9px;
     font-weight: 700;
     text-transform: uppercase;
@@ -993,7 +997,7 @@
       padding: 10px 12px;
       font-size: 12px;
       letter-spacing: 1px;
-      text-align: left;
+      justify-content: flex-start;
     }
 
     /* Column 2 -- the active panel. */

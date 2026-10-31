@@ -5,8 +5,8 @@
  *   C  tap targets >= 44px                     (fold sizes)
  *   D  nothing hidden under the sticky rail    (fold sizes)
  *   E  left/right safe-area insets respected   (fold sizes)
- *   F  phone + desktop pixel-identical to the  (control sizes)
- *      before/ baseline
+ *   F  no accidental visual drift: every size    (all sizes)
+ *      pixel-identical to the approved shots/golden/
  */
 const { chromium } = require('playwright');
 const fs = require('fs');
@@ -55,6 +55,22 @@ const rec = (size, tab, rule, pass, detail) =>
       }));
       rec(s.name, tab, 'A no-x-scroll', ov.sw <= ov.cw, `scrollW ${ov.sw} vs clientW ${ov.cw}`);
 
+      // ---- C: tap targets (every size, not just the fold) -------------
+      {
+        const small = await page.evaluate((min) => {
+          const out = [];
+          document.querySelectorAll('.tab').forEach((el) => {
+            const r = el.getBoundingClientRect();
+            if (r.height < min || r.width < min) {
+              out.push(`${el.textContent.trim()} ${Math.round(r.width)}x${Math.round(r.height)}`);
+            }
+          });
+          return out;
+        }, MIN_TAP);
+        rec(s.name, tab, 'C tap>=44', small.length === 0,
+          small.length ? `under 44px: ${small.join(', ')}` : 'all >= 44px');
+      }
+
       if (isFold) {
         // ---- B: two panes side by side -------------------------------
         const panes = await page.evaluate(() => {
@@ -73,20 +89,6 @@ const rec = (size, tab, rule, pass, detail) =>
           Math.min(panes.railBottom, panes.panelBottom) > Math.max(panes.railTop, panes.panelTop);
         rec(s.name, tab, 'B two-panes', !!sideBySide,
           panes ? `rail.right ${panes.railRight} / panel.left ${panes.panelLeft}` : 'missing nodes');
-
-        // ---- C: tap targets ------------------------------------------
-        const small = await page.evaluate((min) => {
-          const out = [];
-          document.querySelectorAll('.tab').forEach((el) => {
-            const r = el.getBoundingClientRect();
-            if (r.height < min || r.width < min) {
-              out.push(`${el.textContent.trim()} ${Math.round(r.width)}x${Math.round(r.height)}`);
-            }
-          });
-          return out;
-        }, MIN_TAP);
-        rec(s.name, tab, 'C tap>=44', small.length === 0,
-          small.length ? `under 44px: ${small.join(', ')}` : 'all >= 44px');
 
         // ---- D: nothing hidden under the sticky rail -----------------
         const covered = await page.evaluate(() => {
@@ -126,12 +128,12 @@ const rec = (size, tab, rule, pass, detail) =>
       }
 
       // ---- F: control sizes must be pixel-identical --------------------
-      if (isControl) {
-        const baseline = path.join(__dirname, '..', 'shots', 'before', `${s.name}__${tab}.png`);
-        if (fs.existsSync(baseline)) {
+      {
+        const golden = path.join(__dirname, '..', 'shots', 'golden', `${s.name}__${tab}.png`);
+        if (fs.existsSync(golden)) {
           const shot = await page.screenshot();
-          const same = Buffer.compare(shot, fs.readFileSync(baseline)) === 0;
-          rec(s.name, tab, 'F unchanged', same, same ? 'pixel-identical' : 'DIFFERS from baseline');
+          const same = Buffer.compare(shot, fs.readFileSync(golden)) === 0;
+          rec(s.name, tab, 'F no-drift', same, same ? 'matches golden' : 'DIFFERS from golden');
         }
       }
     }
