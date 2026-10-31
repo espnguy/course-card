@@ -1,0 +1,338 @@
+[
+  {
+    "size": "382x580-duo-cover",
+    "tab": "plan",
+    "scrollW": 382,
+    "clientW": 382,
+    "bodyW": 382,
+    "overflow": false
+  },
+  {
+    "size": "382x580-duo-cover",
+    "tab": "yards",
+    "scrollW": 382,
+    "clientW": 382,
+    "bodyW": 382,
+    "overflow": false
+  },
+  {
+    "size": "382x580-duo-cover",
+    "tab": "lies",
+    "scrollW": 382,
+    "clientW": 382,
+    "bodyW": 382,
+    "overflow": false
+  },
+  {
+    "size": "382x580-duo-cover",
+    "tab": "chips",
+    "scrollW": 382,
+    "clientW": 382,
+    "bodyW": 382,
+    "overflow": false
+  },
+  {
+    "size": "382x580-duo-cover",
+    "tab": "slopechips",
+    "scrollW": 382,
+    "clientW": 382,
+    "bodyW": 382,
+    "overflow": false
+  },
+  {
+    "size": "382x580-duo-cover",
+    "tab": "grain",
+    "scrollW": 382,
+    "clientW": 382,
+    "bodyW": 382,
+    "overflow": false
+  },
+  {
+    "size": "382x580-duo-cover",
+    "tab": "sand",
+    "scrollW": 382,
+    "clientW": 382,
+    "bodyW": 382,
+    "overflow": false
+  },
+  {
+    "size": "669x825-duo-inner",
+    "tab": "plan",
+    "scrollW": 669,
+    "clientW": 669,
+    "bodyW": 669,
+    "overflow": false
+  },
+  {
+    "size": "669x825-duo-inner",
+    "tab": "yards",
+    "scrollW": 669,
+    "clientW": 669,
+    "bodyW": 669,
+    "overflow": false
+  },
+  {
+    "size": "669x825-duo-inner",
+    "tab": "lies",
+    "scrollW": 669,
+    "clientW": 669,
+    "bodyW": 669,
+    "overflow": false
+  },
+  {
+    "size": "669x825-duo-inner",
+    "tab": "chips",
+    "scrollW": 669,
+    "clientW": 669,
+    "bodyW": 669,
+    "overflow": false
+  },
+  {
+    "size": "669x825-duo-inner",
+    "tab": "slopechips",
+    "scrollW": 669,
+    "clientW": 669,
+    "bodyW": 669,
+    "overflow": false
+  },
+  {
+    "size": "669x825-duo-inner",
+    "tab": "grain",
+    "scrollW": 669,
+    "clientW": 669,
+    "bodyW": 669,
+    "overflow": false
+  },
+  {
+    "size": "669x825-duo-inner",
+    "tab": "sand",
+    "scrollW": 669,
+    "clientW": 669,
+    "bodyW": 669,
+    "overflow": false
+  },
+  {
+    "size": "870x669-duo-inner",
+    "tab": "plan",
+    "scrollW": 870,
+    "clientW": 870,
+    "bodyW": 870,
+    "overflow": false
+  },
+  {
+    "size": "870x669-duo-inner",
+    "tab": "yards",
+    "scrollW": 870,
+    "clientW": 870,
+    "bodyW": 870,
+    "overflow": false
+  },
+  {
+    "size": "870x669-duo-inner",
+    "tab": "lies",
+    "scrollW": 870,
+    "clientW": 870,
+    "bodyW": 870,
+    "overflow": false
+  },
+  {
+    "size": "870x669-duo-inner",
+    "tab": "chips",
+    "scrollW": 870,
+    "clientW": 870,
+    "bodyW": 870,
+    "overflow": false
+  },
+  {
+    "size": "870x669-duo-inner",
+    "tab": "slopechips",
+    "scrollW": 870,
+    "clientW": 870,
+    "bodyW": 870,
+    "overflow": false
+  },
+  {
+    "size": "870x669-duo-inner",
+    "tab": "grain",
+    "scrollW": 870,
+    "clientW": 870,
+    "bodyW": 870,
+    "overflow": false
+  },
+  {
+    "size": "870x669-duo-inner",
+    "tab": "sand",
+    "scrollW": 870,
+    "clientW": 870,
+    "bodyW": 870,
+    "overflow": false
+  },
+  {
+    "size": "951x543-duo-inner",
+    "tab": "plan",
+    "scrollW": 951,
+    "clientW": 951,
+    "bodyW": 951,
+    "overflow": false
+  },
+  {
+    "size": "951x543-duo-inner",
+    "tab": "yards",
+    "scrollW": 951,
+    "clientW": 951,
+    "bodyW": 951,
+    "overflow": false
+  },
+  {
+    "size": "951x543-duo-inner",
+    "tab": "lies",
+    "scrollW": 951,
+    "clientW": 951,
+    "bodyW": 951,
+    "overflow": false
+  },
+  {
+    "size": "951x543-duo-inner",
+    "tab": "chips",
+    "scrollW": 951,
+    "clientW": 951,
+    "bodyW": 951,
+    "overflow": false
+  },
+  {
+    "size": "951x543-duo-inner",
+    "tab": "slopechips",
+    "scrollW": 951,
+    "clientW": 951,
+    "bodyW": 951,
+    "overflow": false
+  },
+  {
+    "size": "951x543-duo-inner",
+    "tab": "grain",
+    "scrollW": 951,
+    "clientW": 951,
+    "bodyW": 951,
+    "overflow": false
+  },
+  {
+    "size": "951x543-duo-inner",
+    "tab": "sand",
+    "scrollW": 951,
+    "clientW": 951,
+    "bodyW": 951,
+    "overflow": false
+  },
+  {
+    "size": "390x844-phone",
+    "tab": "plan",
+    "scrollW": 390,
+    "clientW": 390,
+    "bodyW": 390,
+    "overflow": false
+  },
+  {
+    "size": "390x844-phone",
+    "tab": "yards",
+    "scrollW": 390,
+    "clientW": 390,
+    "bodyW": 390,
+    "overflow": false
+  },
+  {
+    "size": "390x844-phone",
+    "tab": "lies",
+    "scrollW": 390,
+    "clientW": 390,
+    "bodyW": 390,
+    "overflow": false
+  },
+  {
+    "size": "390x844-phone",
+    "tab": "chips",
+    "scrollW": 390,
+    "clientW": 390,
+    "bodyW": 390,
+    "overflow": false
+  },
+  {
+    "size": "390x844-phone",
+    "tab": "slopechips",
+    "scrollW": 390,
+    "clientW": 390,
+    "bodyW": 390,
+    "overflow": false
+  },
+  {
+    "size": "390x844-phone",
+    "tab": "grain",
+    "scrollW": 390,
+    "clientW": 390,
+    "bodyW": 390,
+    "overflow": false
+  },
+  {
+    "size": "390x844-phone",
+    "tab": "sand",
+    "scrollW": 390,
+    "clientW": 390,
+    "bodyW": 390,
+    "overflow": false
+  },
+  {
+    "size": "1440x900-desktop",
+    "tab": "plan",
+    "scrollW": 1440,
+    "clientW": 1440,
+    "bodyW": 480,
+    "overflow": false
+  },
+  {
+    "size": "1440x900-desktop",
+    "tab": "yards",
+    "scrollW": 1440,
+    "clientW": 1440,
+    "bodyW": 480,
+    "overflow": false
+  },
+  {
+    "size": "1440x900-desktop",
+    "tab": "lies",
+    "scrollW": 1440,
+    "clientW": 1440,
+    "bodyW": 480,
+    "overflow": false
+  },
+  {
+    "size": "1440x900-desktop",
+    "tab": "chips",
+    "scrollW": 1440,
+    "clientW": 1440,
+    "bodyW": 480,
+    "overflow": false
+  },
+  {
+    "size": "1440x900-desktop",
+    "tab": "slopechips",
+    "scrollW": 1440,
+    "clientW": 1440,
+    "bodyW": 480,
+    "overflow": false
+  },
+  {
+    "size": "1440x900-desktop",
+    "tab": "grain",
+    "scrollW": 1440,
+    "clientW": 1440,
+    "bodyW": 480,
+    "overflow": false
+  },
+  {
+    "size": "1440x900-desktop",
+    "tab": "sand",
+    "scrollW": 1440,
+    "clientW": 1440,
+    "bodyW": 480,
+    "overflow": false
+  }
+]

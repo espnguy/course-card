@@ -936,17 +936,73 @@
 
 <!-- ==== PWA plumbing: iOS standalone safe areas ==== -->
 <style>
+  /* Insets go through variables so they can be overridden in tests.
+     Default is env(), so real-device behaviour is unchanged. */
+  :root {
+    --sai-t: env(safe-area-inset-top, 0px);
+    --sai-b: env(safe-area-inset-bottom, 0px);
+    --sai-l: env(safe-area-inset-left, 0px);
+    --sai-r: env(safe-area-inset-right, 0px);
+  }
   /* Keeps the header clear of the notch/clock and the bottom clear of the
      home indicator when launched from the home screen. Layout is otherwise
      identical to the original card. */
   body {
-    padding-top:    calc(14px + env(safe-area-inset-top));
-    padding-bottom: calc(24px + env(safe-area-inset-bottom));
-    padding-left:   calc(12px + env(safe-area-inset-left));
-    padding-right:  calc(12px + env(safe-area-inset-right));
+    padding-top:    calc(14px + var(--sai-t));
+    padding-bottom: calc(24px + var(--sai-b));
+    padding-left:   calc(12px + var(--sai-l));
+    padding-right:  calc(12px + var(--sai-r));
   }
   /* Stop iOS text-selection callouts when tapping tabs during a round. */
   body { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
+</style>
+
+<!-- ==== Fold layout: iPhone Duo inner screen (600-1000px wide) ==== -->
+<style>
+  /* Two panes side by side: the tab rail becomes a vertical list in column 1,
+     the active panel fills column 2. All seven panels share the same grid
+     cell -- only the active one is display:block -- so NO markup changes are
+     needed. Outside 600-1000px nothing here applies, so the phone and desktop
+     layouts are byte-for-byte untouched. */
+  @media (min-width: 600px) and (max-width: 1000px) {
+    body {
+      max-width: none;
+      display: grid;
+      grid-template-columns: 196px minmax(0, 1fr);
+      grid-template-rows: auto minmax(0, 1fr);
+      column-gap: 18px;
+      align-content: start;
+    }
+
+    .head  { grid-column: 1 / -1; grid-row: 1; }
+
+    /* Column 1 -- the rail. Sticky so the tabs stay reachable on the
+       short 543px-tall landscape posture without covering column 2. */
+    .tabs {
+      grid-column: 1;
+      grid-row: 2;
+      grid-template-columns: 1fr;
+      gap: 6px;
+      align-self: start;
+      position: sticky;
+      top: calc(14px + var(--sai-t));
+      margin-bottom: 0;
+    }
+    .tab {
+      min-height: 44px;          /* iOS minimum tap target */
+      padding: 10px 12px;
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-align: left;
+    }
+
+    /* Column 2 -- the active panel. */
+    .panel { grid-column: 2; grid-row: 2; }
+
+    /* The panel is now ~500-760px wide, so the two-up card rows can breathe
+       and the long reference tables stop clipping on short screens. */
+    .yard-row, .yard-head { grid-template-columns: 2fr 1fr 1fr; }
+  }
 </style>
 </head>
 <body>
