@@ -1014,6 +1014,24 @@
        proportions match the phone. */
     .traj { max-width: 360px; margin: 4px auto 8px; }
   }
+
+  /* Two-up cards on the wider inner-screen postures (870, 951). The active
+     panel becomes a 2-column grid: the repeated cards (chip, slope, rough/
+     sand) pair up, and every other block spans the full width. */
+  /* Only panels that HAVE pairable cards become grids -- grid items don't
+     collapse margins, so gridding the others would shift their spacing. */
+  @media (min-width: 800px) {
+    .panel.active:has(> .chip-card, > .slope-card, > .rough-card) {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      column-gap: 10px;
+      align-items: start;
+    }
+    .panel.active > * { grid-column: 1 / -1; }
+    .panel.active > .chip-card,
+    .panel.active > .slope-card,
+    .panel.active > .rough-card { grid-column: auto; }
+  }
 </style>
 </head>
 <body>
