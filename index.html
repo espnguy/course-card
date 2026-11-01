@@ -131,6 +131,18 @@
     line-height: 1;
   }
 
+  /* Lie diagrams: grey dashed = reference (aim line / normal shot),
+     solid colour = what the ball actually does. */
+  .lie-viz {
+    display: block;
+    width: 100%;
+    max-width: 280px;
+    aspect-ratio: 220 / 80;
+    margin: 2px auto 8px;
+  }
+  /* Too small to read on the cover screen; the picture carries it there. */
+  @media (max-width: 599px) { .lie-viz .lbl { display: none; } }
+
   .card ul {
     list-style: none;
     font-size: 13px;
@@ -912,6 +924,7 @@
   <div class="grid-2">
     <div class="card" style="--accent:#6db58a">
       <div class="card-title"><span class="arrow">▲</span> Ball ABOVE feet</div>
+      <svg class="lie-viz" viewBox="0 0 220 80" aria-hidden="true"><!-- from behind: ground rises toward the ball --><polygon points="6,68 94,38 94,78 6,78" fill="#1d3b28" stroke="#2f5a40" stroke-width="1"/><line x1="14" y1="62" x2="74" y2="62" stroke="#7a8a7e" stroke-width="1.5" stroke-dasharray="3,2" fill="none"/><path d="M18 63 L24 49 L28 61 M24 49 L30 36 M30 37 L40 47 L59 47" stroke="#e8e0c8" stroke-width="2" stroke-linecap="round" fill="none"/><circle cx="32" cy="31" r="4" fill="#e8e0c8"/><circle cx="62" cy="45.5" r="3.5" fill="#c9a961"/><line x1="104" y1="8" x2="104" y2="72" stroke="#2d4d38" stroke-width="1"/><ellipse cx="165" cy="17" rx="17" ry="9" fill="#1f4a33"/><line x1="165" y1="17" x2="165" y2="5" stroke="#f5f0e1" stroke-width="1"/><polygon points="165,5 175,8 165,11" fill="#d97a3a"/><line x1="165" y1="69" x2="198" y2="14" stroke="#7a8a7e" stroke-width="1.5" stroke-dasharray="3,2" fill="none"/><path d="M 165 69 Q 186 34 166 19" stroke="#6db58a" stroke-width="2" fill="none"/><circle cx="165" cy="71" r="3.5" fill="#c9a961"/><text x="200" y="9" text-anchor="middle" fill="#7a8a7e" class="lbl" font-size="9" font-family="Helvetica" font-weight="700" letter-spacing="0.5">AIM</text></svg>
       <ul>
         <li>Stand <span class="key">taller</span></li>
         <li><span class="key">Choke down</span> on grip</li>
@@ -921,6 +934,7 @@
     </div>
     <div class="card" style="--accent:#6db58a">
       <div class="card-title"><span class="arrow">▼</span> Ball BELOW feet</div>
+      <svg class="lie-viz" viewBox="0 0 220 80" aria-hidden="true"><!-- from behind: ground falls toward the ball --><polygon points="6,38 94,68 94,78 6,78" fill="#1d3b28" stroke="#2f5a40" stroke-width="1"/><line x1="14" y1="43" x2="74" y2="43" stroke="#7a8a7e" stroke-width="1.5" stroke-dasharray="3,2" fill="none"/><path d="M18 42 L25 30 L28 45 M25 30 L33 19 M32 20 L40 32 L60 51" stroke="#e8e0c8" stroke-width="2" stroke-linecap="round" fill="none"/><circle cx="35" cy="14.5" r="4" fill="#e8e0c8"/><circle cx="62" cy="53.6" r="3.5" fill="#c9a961"/><line x1="104" y1="8" x2="104" y2="72" stroke="#2d4d38" stroke-width="1"/><ellipse cx="165" cy="17" rx="17" ry="9" fill="#1f4a33"/><line x1="165" y1="17" x2="165" y2="5" stroke="#f5f0e1" stroke-width="1"/><polygon points="165,5 175,8 165,11" fill="#d97a3a"/><line x1="165" y1="69" x2="132" y2="14" stroke="#7a8a7e" stroke-width="1.5" stroke-dasharray="3,2" fill="none"/><path d="M 165 69 Q 145 36 166 19" stroke="#6db58a" stroke-width="2" fill="none"/><circle cx="165" cy="71" r="3.5" fill="#c9a961"/><text x="130" y="9" text-anchor="middle" fill="#7a8a7e" class="lbl" font-size="9" font-family="Helvetica" font-weight="700" letter-spacing="0.5">AIM</text></svg>
       <ul>
         <li><span class="key">Bend more</span> at hips</li>
         <li>Sit into heels, more knee flex</li>
@@ -934,6 +948,7 @@
   <div class="grid-2">
     <div class="card" style="--accent:#d9a441">
       <div class="card-title"><span class="arrow">↗</span> UPHILL — High</div>
+      <svg class="lie-viz" viewBox="0 0 220 80" aria-hidden="true"><!-- side view, target right: ball on an upslope --><polygon points="6,70 56,52 214,52 214,78 6,78" fill="#1d3b28" stroke="#2f5a40" stroke-width="1"/><line x1="188" y1="52" x2="188" y2="30" stroke="#f5f0e1" stroke-width="1"/><polygon points="188,30 199,33 188,36" fill="#d97a3a"/><path d="M 30 58 Q 110 0 186 52" stroke="#7a8a7e" stroke-width="1.5" stroke-dasharray="3,2" fill="none"/><path d="M 30 58 Q 85 -30 140 52" stroke="#d9a441" stroke-width="2" fill="none"/><line x1="140" y1="52" x2="147" y2="52" stroke="#d9a441" stroke-width="2.5"/><circle cx="30" cy="58" r="3.5" fill="#c9a961"/><text x="85" y="8" text-anchor="middle" fill="#d9a441" class="lbl" font-size="9" font-family="Helvetica" font-weight="700" letter-spacing="0.5">HIGH · SHORT</text><text x="176" y="22" text-anchor="middle" fill="#7a8a7e" class="lbl" font-size="9" font-family="Helvetica" font-weight="700" letter-spacing="0.5">normal</text></svg>
       <ul>
         <li>Shoulders <span class="key">match slope</span></li>
         <li>Ball <span class="key">forward</span></li>
@@ -943,6 +958,7 @@
     </div>
     <div class="card" style="--accent:#d97a3a">
       <div class="card-title"><span class="arrow">↘</span> DOWNHILL — Low</div>
+      <svg class="lie-viz" viewBox="0 0 220 80" aria-hidden="true"><!-- side view, target right: ball on a downslope --><polygon points="6,44 56,62 214,62 214,78 6,78" fill="#1d3b28" stroke="#2f5a40" stroke-width="1"/><line x1="170" y1="62" x2="170" y2="40" stroke="#f5f0e1" stroke-width="1"/><polygon points="170,40 181,43 170,46" fill="#d97a3a"/><path d="M 30 49 Q 100 -5 165 62" stroke="#7a8a7e" stroke-width="1.5" stroke-dasharray="3,2" fill="none"/><path d="M 30 49 Q 75 20 115 62" stroke="#d97a3a" stroke-width="2" fill="none"/><line x1="115" y1="62" x2="205" y2="62" stroke="#d97a3a" stroke-width="2.5"/><polygon points="205,58.5 212,62 205,65.5" fill="#d97a3a"/><circle cx="30" cy="49" r="3.5" fill="#c9a961"/><text x="160" y="74" text-anchor="middle" fill="#d97a3a" class="lbl" font-size="9" font-family="Helvetica" font-weight="700" letter-spacing="0.5">LOW · RUNS</text><text x="99" y="17" text-anchor="middle" fill="#7a8a7e" class="lbl" font-size="9" font-family="Helvetica" font-weight="700" letter-spacing="0.5">normal</text></svg>
       <ul>
         <li>Shoulders <span class="key">match slope</span></li>
         <li>Ball <span class="key">back</span></li>
