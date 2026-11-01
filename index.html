@@ -464,7 +464,8 @@
   }
   .traj {
     width: 100%;
-    height: 70px;
+    height: auto;
+    aspect-ratio: 280 / 70;   /* matches the viewBox -> zero distortion */
     margin: 4px 0 8px;
     display: block;
   }
@@ -966,9 +967,9 @@
   /* Two panes side by side: the tab rail becomes a vertical list in column 1,
      the active panel fills column 2. All seven panels share the same grid
      cell -- only the active one is display:block -- so NO markup changes are
-     needed. Outside 600-1000px nothing here applies, so the phone and desktop
-     layouts are byte-for-byte untouched. */
-  @media (min-width: 600px) and (max-width: 1000px) {
+     needed. Below 600px (the Duo cover screen) the original single-column
+     layout applies unchanged. */
+  @media (min-width: 600px) {
     body {
       max-width: none;
       display: grid;
@@ -1011,7 +1012,7 @@
        stretches them horizontally (2.45x at 951px, which turns the ball into
        an ellipse). Cap them at the width they were designed around so the
        proportions match the phone. */
-    .traj { max-width: 460px; margin: 4px auto 8px; }
+    .traj { max-width: 360px; margin: 4px auto 8px; }
   }
 </style>
 </head>
