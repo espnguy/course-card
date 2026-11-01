@@ -5,6 +5,7 @@
  *   C  tap targets >= 44px                     (fold sizes)
  *   D  nothing hidden under the sticky rail    (fold sizes)
  *   E  left/right safe-area insets respected   (fold sizes)
+ *   G  no stretched gaps between rows          (every size)
  *   F  no accidental visual drift: every size    (all sizes)
  *      pixel-identical to the approved shots/golden/
  */
@@ -54,6 +55,23 @@ const rec = (size, tab, rule, pass, detail) =>
         cw: document.documentElement.clientWidth
       }));
       rec(s.name, tab, 'A no-x-scroll', ov.sw <= ov.cw, `scrollW ${ov.sw} vs clientW ${ov.cw}`);
+
+      // ---- G: no stretched gaps between rows ---------------------------
+      // A grid panel stretches its rows when the screen is taller than the
+      // content. The golden snapshot once approved a 59px gap, so measure it.
+      {
+        const worst = await page.evaluate(() => {
+          const k = [...document.querySelector('.panel.active').children]
+            .map((e) => e.getBoundingClientRect()).filter((r) => r.height);
+          let w = 0;
+          k.forEach((r) => {
+            const above = k.filter((o) => o.bottom <= r.top + 1);
+            if (above.length) w = Math.max(w, r.top - Math.max(...above.map((o) => o.bottom)));
+          });
+          return Math.round(w);
+        });
+        rec(s.name, tab, 'G row-gap<=24', worst <= 24, `largest gap ${worst}px`);
+      }
 
       // ---- C: tap targets (every size, not just the fold) -------------
       {

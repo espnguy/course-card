@@ -844,6 +844,7 @@
       grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
       column-gap: 10px;
       align-items: start;
+      align-content: start;   /* don't stretch rows to fill spare height */
     }
     .panel.active > * { grid-column: 1 / -1; }
     .panel.active > .chip-card,
