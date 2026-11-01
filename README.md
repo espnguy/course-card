@@ -1,7 +1,7 @@
 # Course Card
 
 An offline-first golf reference card for the iPhone home screen.
-Dark green/gold theme, 7 tabs: Plan, Yards, Lies, Chips, Slopes, Grain, Sand.
+Dark green/gold theme, 5 tabs: Yards, Lies, Chips, Grain, Sand. Opens on Yards.
 
 ## Files
 

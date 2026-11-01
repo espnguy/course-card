@@ -9,6 +9,6 @@ module.exports = {
     { name: '951x543-duo-inner',  w: 951, h: 543, duo: true }
   ],
   // The seven tabs are this app's "pages".
-  TABS: ['plan', 'yards', 'lies', 'chips', 'slopechips', 'grain', 'sand'],
+  TABS: ['yards', 'lies', 'chips', 'grain', 'sand'],
   BASE: 'http://localhost:8125'
 };
