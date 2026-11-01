@@ -22,16 +22,24 @@ git add -A && git commit -m "Update yardages" && git push
 
 GitHub Pages redeploys in ~30 seconds.
 
-**How updates reach your phone:** the service worker serves the cached copy
-instantly, then quietly re-downloads in the background. So after a push, open
-the app once with signal (it still shows the old card), then open it again —
-the second open shows your edit. This is deliberate: it means the card *never*
-waits on the network when you're on the course.
-
-Want it immediately? Open the app twice, or hold the app icon → delete → re-add.
+**How updates reach your phone:** automatically. Whenever the app opens or
+comes back to the front, it checks for a newer card. If there is one, it
+updates its offline copy and reloads itself, which takes about a second. With
+no signal the check does nothing, so the card always opens instantly on the
+course.
 
 You only need to touch `sw.js` if you **add or rename a file** — add it to the
-`ASSETS` list and bump `course-card-v1` to `-v2`.
+`ASSETS` list and bump the version number in `CACHE` (e.g. `-v2` to `-v3`).
+
+## Tests
+
+```bash
+node tools/check.js        # layout rules at the Duo's four screen sizes
+node tools/update-test.js  # offline + auto-update flow, service worker on
+```
+
+`check.js` needs the local server on port 8125 (below); `update-test.js`
+runs its own.
 
 ## Testing locally
 

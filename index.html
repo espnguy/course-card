@@ -1494,6 +1494,30 @@
     window.addEventListener('load', function () {
       navigator.serviceWorker.register('sw.js');
     });
+
+    // iOS resumes home-screen apps from memory instead of reloading them, so
+    // ask the service worker for a newer card on launch and whenever the app
+    // comes to the front. Without signal the check fails quietly.
+    function checkForUpdate() {
+      if (!navigator.serviceWorker.controller) return;
+      fetch('./?update-check=' + Date.now())
+        .then(function (r) { return r.json(); })
+        .then(function (d) {
+          if (!d.changed) return;
+          // Guard against reload loops while a deploy is still propagating.
+          try {
+            var last = +sessionStorage.getItem('cc-reloaded') || 0;
+            if (Date.now() - last < 30000) return;
+            sessionStorage.setItem('cc-reloaded', Date.now());
+          } catch (e) {}
+          location.reload();
+        })
+        .catch(function () {});
+    }
+    window.addEventListener('load', checkForUpdate);
+    document.addEventListener('visibilitychange', function () {
+      if (document.visibilityState === 'visible') checkForUpdate();
+    });
   }
 </script>
 
